@@ -12,7 +12,6 @@ import org.apache.spark.streaming.kafka010.KafkaUtils;
 import org.apache.spark.streaming.kafka010.LocationStrategies;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
@@ -33,7 +32,6 @@ public class SparkConsumerService {
         this.topics = Arrays.asList(topics);
     }
 
-    @Bean
     public void run(){
 
         JavaStreamingContext jssc = new JavaStreamingContext(sparkConf, Durations.seconds(10));
